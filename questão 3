@@ -1,0 +1,33 @@
+saida_hora = int(input('Digite o horário de saída (horas): '))
+saida_minuto = int(input('Digite o horário de saída (minutos): '))
+chegada_hora = int(input('Digite o horário de chegada (horas): '))
+chegada_minuto = int(input('Digite o horário de chegada (minutos): '))
+descanso_segundos = int(input('Digite o número de segundos parados para descanso: '))
+litros_gastos = float(input('Digite o número de litros de combustível gasto (em litros): '))
+preco_combustivel = float(input('Digite o preço do litro de combustível (em R$): '))
+distancia_percorrida = float(input('Digite a distância percorrida (em Km): '))
+
+tempo_saida_total = saida_hora * 3600 + saida_minuto * 60
+tempo_chegada_total = chegada_hora * 3600 + chegada_minuto * 60
+tempo_total = tempo_chegada_total - tempo_saida_total - descanso_segundos
+
+tempo_total_horas = tempo_total / 3600
+
+velocidade_media_global = distancia_percorrida / tempo_total_horas
+
+velocidade_media_movimento = distancia_percorrida / (tempo_total_horas + descanso_segundos / 3600)
+
+custo_viagem_combustivel = litros_gastos * preco_combustivo
+
+km_por_litro = distancia_percorrida / litros_gastos
+litros_por_hora = litros_gastos / (tempo_total_horas + descanso_segundos / 3600)
+custo_por_km = custo_viagem_combustivel / distancia_percorrida
+
+print(f'Tempo de viagem: {tempo_total} segundos')
+print(f'Velocidade média global: {velocidade_media_global:.2f} Km/h')
+print(f'Velocidade média em movimento: {velocidade_media_movimento:.2f} Km/h')
+print(f'Custo da viagem com combustível: R$ {custo_viagem_combustivel:.2f}')
+print(f'Desempenho do carro:')
+print(f'   - Km/l: {km_por_litro:.2f}')
+print(f'   - Litros/h: {litros_por_hora:.2f}')
+print(f'   - R$/Km: R$ {custo_por_km:.2f}')
