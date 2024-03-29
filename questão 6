@@ -1,0 +1,29 @@
+from datetime import datetime, timedelta
+sexo = input("Digite o sexo da pessoa (masculino/feminino): ")
+data_nascimento_str = input("Digite a data de nascimento da pessoa (no formato DD/MM/AAAA): ")
+data_inicio_contribuicao_str = input("Digite a data de início da contribuição previdenciária (no formato DD/MM/AAAA): ")
+data_nascimento = datetime.strptime(data_nascimento_str, "%d/%m/%Y")
+data_inicio_contribuicao = datetime.strptime(data_inicio_contribuicao_str, "%d/%m/%Y")
+hoje = datetime.now()
+idade = hoje.year - data_nascimento.year - ((hoje.month, hoje.day) < (data_nascimento.month, data_nascimento.day))
+tempo_contribuicao = hoje.year - data_inicio_contribuicao.year - ((hoje.month, hoje.day) < (data_inicio_contribuicao.month, data_inicio_contribuicao.day))
+if sexo.lower() == "masculino":
+    idade_aposentadoria = 65
+    tempo_contribuicao_aposentadoria = 35
+elif sexo.lower() == "feminino":
+    idade_aposentadoria = 62
+    tempo_contribuicao_aposentadoria = 30
+else:
+    print("Sexo não reconhecido.")
+    exit()
+if idade >= idade_aposentadoria and tempo_contribuicao >= tempo_contribuicao_aposentadoria:
+    print("A pessoa já pode se aposentar.")
+    exit()
+if idade < idade_aposentadoria:
+    anos_faltantes = idade_aposentadoria - idade
+    data_aposentadoria = hoje + timedelta(days=(365 * anos_faltantes))
+else:
+    anos_faltantes = tempo_contribuicao_aposentadoria - tempo_contribuicao
+    data_aposentadoria = hoje + timedelta(days=(365 * anos_faltantes))
+
+print("A data de aposentadoria prevista é:", data_aposentadoria.strftime("%d/%m/%Y"))
