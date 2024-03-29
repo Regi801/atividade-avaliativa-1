@@ -1,0 +1,61 @@
+valor_saque = float(input('Digite o valor do saque:'))
+
+valor = 100
+quantidade = int(valor_saque // valor)
+print("R$ {}: {}".format(valor, quantidade))
+valor_saque -= quantidade * valor
+
+valor = 50
+quantidade = int(valor_saque // valor)
+print("R$ {}: {}".format(valor, quantidade))
+valor_saque -= quantidade * valor
+
+valor = 20
+quantidade = int(valor_saque // valor)
+print("R$ {}: {}".format(valor, quantidade))
+valor_saque -= quantidade * valor
+
+valor = 10
+quantidade = int(valor_saque // valor)
+print("R$ {}: {}".format(valor, quantidade))
+valor_saque -= quantidade * valor
+
+valor = 5
+quantidade = int(valor_saque // valor)
+print("R$ {}: {}".format(valor, quantidade))
+valor_saque -= quantidade * valor
+
+valor = 2
+quantidade = int(valor_saque // valor)
+print("R$ {}: {}".format(valor, quantidade))
+valor_saque -= quantidade * valor
+
+valor = 1
+quantidade = int(valor_saque // valor)
+print("R$ {}: {}".format(valor, quantidade))
+valor_saque -= quantidade * valor
+
+valor = 0.5
+quantidade = int(valor_saque // valor)
+print("R$ {:.2f}: {}".format(valor, quantidade))
+valor_saque -= quantidade * valor
+
+valor = 0.25
+quantidade = int(valor_saque // valor)
+print("R$ {:.2f}: {}".format(valor, quantidade))
+valor_saque -= quantidade * valor
+
+valor = 0.10
+quantidade = int(valor_saque // valor)
+print("R$ {:.2f}: {}".format(valor, quantidade))
+valor_saque -= quantidade * valor
+
+valor = 0.05
+quantidade = int(valor_saque // valor)
+print("R$ {:.2f}: {}".format(valor, quantidade))
+valor_saque -= quantidade * valor
+
+valor = 0.01
+quantidade = int(valor_saque // valor)
+print("R$ {:.2f}: {}".format(valor, quantidade))
+valor_saque -= quantidade * valor
