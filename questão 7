@@ -1,0 +1,34 @@
+import math
+import sys
+
+a = float(input('Insira o comprimento do lado (a) de um triângulo: '))
+b = float(input('Insira o comprimento do lado (b) de um triângulo: '))
+c = float(input('Insira o comprimento do lado (c) de um triângulo: '))
+
+if not (a + b > c and a + c > b and b + c > a):
+    print('Não é um triângulo.')
+    sys.exit()
+
+ang1 = math.degrees(math.acos((b**2 + c**2 - a**2)/(2*b*c)))
+ang2 = math.degrees(math.acos((a**2 + c**2 - b**2)/(2*a*c)))
+ang3 = 180 - ang1 - ang2
+
+print('O triângulo possui os seguintes ângulos:')
+print(f'Ângulo 1: {round(ang1, 2)}°')
+print(f'Ângulo 2: {round(ang2, 2)}°')
+print(f'Ângulo 3: {round(ang3, 2)}°')
+print(70*'-')
+
+if a == b == c:
+    print('Triângulo Equilátero')
+elif a == b or a == c or b == c:
+    print('Triângulo Isósceles')
+else:
+    print('Triângulo Escaleno')
+
+if ang1 > 90 or ang2 > 90 or ang3 > 90:
+    print('Ângulo Obtuso')
+elif ang1 == 90 or ang2 == 90 or ang3 == 90:
+    print('Ângulo Retângulo')
+else:
+    print('Ângulo Agudo')
