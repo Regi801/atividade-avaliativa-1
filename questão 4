@@ -1,0 +1,42 @@
+import sys
+
+dia_inicial = int(input("Digite o dia inicial: "))
+mes_inicial = int(input("Digite o mês inicial: "))
+dia_final = int(input("Digite o dia final: "))
+mes_final = int(input("Digite o mês final: "))
+
+if mes_inicial > mes_final or (mes_inicial == mes_final and dia_inicial > dia_final):
+    print("Data inicial não pode ser maior que data final.")
+    sys.exit()
+
+meses = {
+    1: 31,  
+    2: 28,  
+    3: 31,  
+    4: 30,  
+    5: 31,  
+    6: 30,  
+    7: 31,  
+    8: 31,  
+    9: 30, 
+    10: 31, 
+    11: 30, 
+    12: 31  
+}
+
+total_dias_inicial = 0
+m = 1
+while m < mes_inicial:
+    total_dias_inicial += meses[m]
+    m += 1
+total_dias_inicial += dia_inicial
+
+total_dias_final = 0
+m = 1
+while m < mes_final:
+    total_dias_final += meses[m]
+    m += 1
+total_dias_final += dia_final
+
+resultado = total_dias_final - total_dias_inicial
+print(f'O número de dias entre as datas é: {resultado}')
