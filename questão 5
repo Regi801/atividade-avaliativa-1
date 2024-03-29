@@ -1,0 +1,28 @@
+tempo = int(input('Digite seu tempo no estacionamento (minutos): '))
+
+if tempo <= 60:
+    print('Valor pago: R$08,00') 
+elif tempo <= 120:
+    print('Valor pago: R$16,00') #2h
+elif tempo < 180:
+    print('Valor pago: R$21,00')
+elif tempo < 240:
+    print('Valor pago: R$26,00') #4h
+elif tempo < 300:
+    print('Valor pago: R$29,00')
+elif tempo < 360:
+    print('Valor pago: R$32,00')
+elif tempo < 420:
+    print('Valor pago: R$35,00')
+elif tempo < 480:
+    print('Valor pago: R$38,00')
+elif tempo < 540:
+    print('Valor pago: R$41,00')
+elif tempo < 600:
+    print('Valor pago: R$44,00')
+elif tempo < 660:
+    print('Valor pago: R$47,00')
+elif tempo < 720:
+    print('Valor pago: R$50,00')#12
+else:
+    print('Valor pago: R$30,00')
